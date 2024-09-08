@@ -1,4 +1,4 @@
-name: ${{ github.repository }} Code Quality Assurance
+name: QuizStream Code Quality Assurance
 
 on:
   push:
