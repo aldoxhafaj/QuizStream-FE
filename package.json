@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "npx eslint . --fix",
-    "typescript:check": "tsc",
+    "typescript:check": "tsc --project tsconfig.app.json --noEmit",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettify": "prettier --write 'src/**/*.{ts,tsx}'",
     "prepare": "husky"
