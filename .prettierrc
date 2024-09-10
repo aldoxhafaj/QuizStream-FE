@@ -1,7 +1,11 @@
 {
+  "plugins": ["prettier-plugin-tailwindcss"],
   "bracketSpacing": true,
   "semi": true,
   "singleQuote": true,
   "trailingComma": "all",
-  "tabWidth": 2
+  "tabWidth": 2,
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindFunctions": ["clsx", "tw"],
+  "tailwindPreserveWhitespace": false
 }

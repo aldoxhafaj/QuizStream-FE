@@ -12,35 +12,65 @@
     "typescript:check": "tsc --project tsconfig.app.json --noEmit",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettify": "prettier --write 'src/**/*.{ts,tsx}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.6.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint": "^8.57.0",
+    "eslint-plugin-formatjs": "^4.12.2",
+    "eslint-plugin-functional": "^6.3.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-sonarjs": "^0.24.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "globals": "^15.9.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.45",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "storybook": "^8.2.9",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "typescript": "^5.5.9",
+    "vite": "^5.4.1",
+    "vite-plugin-html": "^3.2.2",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "npm run lint",
       "npm run prettify"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
     ]
   }
 }
