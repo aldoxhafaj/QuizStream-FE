@@ -33,7 +33,6 @@ module.exports = {
     'functional',
     'unused-imports',
     'formatjs',
-    'prettier-plugin-tailwindcss',
   ],
   rules: {
     // Add or modify rules as needed
