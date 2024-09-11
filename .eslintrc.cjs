@@ -124,7 +124,24 @@ module.exports = {
     'formatjs/enforce-default-message': ['error', 'literal'],
     'formatjs/no-multiple-whitespaces': 'error',
     'formatjs/enforce-id': 'error',
+    'storybook/no-title-property-in-meta': 'error',
+    'storybook/prefer-pascal-case': 'error',
+    'storybook/story-exports': 'error',
+    'storybook/no-redundant-story-name': 'error',
+    'storybook/use-storybook-expect': 'error',
+    'storybook/use-storybook-testing-library': 'error',
+    'storybook/csf-component': 'error',
+    'storybook/await-interactions': 'error',
   },
+  overrides: [
+    {
+      files: ['**/*.stories.@(js|jsx|ts|tsx)'], // Target all Storybook files
+      rules: {
+        'import/no-default-export': 'off', // Disable the rule for Storybook
+        'storybook/default-exports': 'error',
+      },
+    },
+  ],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 'latest',

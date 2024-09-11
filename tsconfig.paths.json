@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@quiz-stream/components/*": ["./components/*"],
-      "@quiz-stream/containers/*": ["./containers/*"],
-      "@quiz-stream/routes/*": ["./routes/*"]
+      "@quiz-stream/components/*": ["./src/components/*"],
+      "@quiz-stream/containers/*": ["./src/containers/*"],
+      "@quiz-stream/layouts/*": ["./src/layouts/*"],
+      "@quiz-stream/routes/*": ["./src/routes/*"]
     }
   }
 }

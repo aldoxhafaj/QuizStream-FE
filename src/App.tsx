@@ -1,3 +1,5 @@
+import { Text } from '@quiz-stream/layouts/typography';
+
 export const App = () => {
-  return <p className="text-lg text-gray-50">Hello Vite!</p>;
+  return <Text className="text-lg text-red-500">Hello Vite!</Text>;
 };
