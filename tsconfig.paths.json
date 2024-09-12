@@ -8,6 +8,7 @@
       "@quiz-stream/intl/*": ["./src/il8n/*"],
       "@quiz-stream/layouts/*": ["./src/layouts/*"],
       "@quiz-stream/routes/*": ["./src/routes/*"],
+      "@quiz-stream/themes/*": ["./src/themes/*"],
       "@quiz-stream/utils/*": ["./src/utils/*"]
     }
   }

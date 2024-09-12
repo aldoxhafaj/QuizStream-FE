@@ -33,6 +33,7 @@ module.exports = {
     'functional',
     'unused-imports',
     'formatjs',
+    'import',
   ],
   rules: {
     // Add or modify rules as needed
@@ -119,7 +120,7 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-cycle': 'error',
     'import/no-duplicates': 'error',
-    'import/no-unresolved': 'off',
+    'import/no-unresolved': 'error',
     'formatjs/no-offset': 'error',
     'formatjs/enforce-default-message': ['error', 'literal'],
     'formatjs/no-multiple-whitespaces': 'error',
@@ -142,6 +143,14 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.paths.json',
+      },
+    },
+  },
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 'latest',
