@@ -5,6 +5,7 @@ export const Container = ({
   className,
   flex,
   flexGrow,
+  backgroundColor,
   padding,
   paddingTop,
   paddingBottom,
@@ -28,6 +29,7 @@ export const Container = ({
       style={{
         flex,
         flexGrow,
+        backgroundColor,
         paddingTop: paddingTop || paddingVertical || padding,
         paddingBottom: paddingBottom || paddingVertical || padding,
         paddingRight: paddingRight || paddingHorizontal || padding,

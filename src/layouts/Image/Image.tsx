@@ -10,6 +10,7 @@ export const Image = ({
   imageHeight = ImageSize.S,
   imageWidth = ImageSize.S,
   tintWhite,
+  onClick,
 }: ImageProps) => {
   const memoizedImage = useMemo(() => getImage(name), [name]);
   const convertToWhite = useMemo(
@@ -22,6 +23,7 @@ export const Image = ({
   return (
     <img
       src={memoizedImage}
+      onClick={onClick}
       style={{
         height: imageHeight,
         width: imageWidth,

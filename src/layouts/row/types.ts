@@ -3,6 +3,7 @@ import {
   JustifyContent,
   LayoutInsetProps,
 } from '@quiz-stream/layouts/types';
+import { Color } from '@quiz-stream/themes/color';
 import { ReactNode } from 'react';
 
 export type RowProps = LayoutInsetProps & {
@@ -12,4 +13,5 @@ export type RowProps = LayoutInsetProps & {
   flexGrow?: number;
   justifyContent?: JustifyContent;
   alignItems?: AlignItem;
+  backgroundColor?: Color; //TODO remove this if you configure colors in tailwind
 };

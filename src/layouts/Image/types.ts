@@ -7,4 +7,5 @@ export type ImageProps = {
   imageHeight?: ImageSize;
   imageWidth?: ImageSize;
   tintWhite?: boolean;
+  onClick?: React.MouseEventHandler<HTMLImageElement>;
 };
