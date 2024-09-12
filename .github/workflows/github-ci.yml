@@ -88,7 +88,7 @@ jobs:
         run: npm run prettier:check
 
   test:
-    name: Run Tests and Generate Coverage
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
