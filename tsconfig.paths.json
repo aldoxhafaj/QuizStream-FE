@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@quiz-stream/components/*": ["./src/components/*"],
+      "@quiz-stream/containers/*": ["./src/containers/*"],
+      "@quiz-stream/contexts/*": ["./src/contexts/*"],
+      "@quiz-stream/intl/*": ["./src/il8n/*"],
+      "@quiz-stream/layouts/*": ["./src/layouts/*"],
+      "@quiz-stream/routes/*": ["./src/routes/*"],
+      "@quiz-stream/themes/*": ["./src/themes/*"],
+      "@quiz-stream/utils/*": ["./src/utils/*"]
+    }
+  }
+}

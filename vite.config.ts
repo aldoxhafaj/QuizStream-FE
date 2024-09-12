@@ -3,7 +3,8 @@ import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export const viteConfig = defineConfig({
+// eslint-disable-next-line import/no-default-export
+export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),

@@ -33,6 +33,7 @@ module.exports = {
     'functional',
     'unused-imports',
     'formatjs',
+    'import',
   ],
   rules: {
     // Add or modify rules as needed
@@ -119,11 +120,36 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-cycle': 'error',
     'import/no-duplicates': 'error',
-    'import/no-unresolved': 'off',
+    'import/no-unresolved': 'error',
     'formatjs/no-offset': 'error',
     'formatjs/enforce-default-message': ['error', 'literal'],
     'formatjs/no-multiple-whitespaces': 'error',
     'formatjs/enforce-id': 'error',
+  },
+  overrides: [
+    {
+      files: ['**/*.stories.@(js|jsx|ts|tsx)'], // Target all Storybook files
+      rules: {
+        'import/no-default-export': 'off', // Disable the rule for Storybook
+        'storybook/default-exports': 'error',
+        'storybook/prefer-pascal-case': 'error',
+        'storybook/no-title-property-in-meta': 'error',
+        'storybook/story-exports': 'error',
+        'storybook/no-redundant-story-name': 'error',
+        'storybook/use-storybook-expect': 'error',
+        'storybook/use-storybook-testing-library': 'error',
+        'storybook/csf-component': 'error',
+        'storybook/await-interactions': 'error',
+      },
+    },
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.paths.json',
+      },
+    },
   },
   parserOptions: {
     sourceType: 'module',
