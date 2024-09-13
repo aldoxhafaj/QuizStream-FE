@@ -9,8 +9,16 @@ export default {
     './node_modules/@nextui-org/theme/dist/components/(button|spinner).js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primaryButton: 'var(--color-primaryButton)',
+      },
+      backgroundImage: {
+        //use it like bg-screen in tailwind className
+        screen: 'var(--color-background)',
+      },
+    },
   },
-  darkMode: 'class',
+  darkMode: 'selector',
   plugins: [nextui()],
 };

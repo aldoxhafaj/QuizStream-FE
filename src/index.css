@@ -7,3 +7,26 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+@layer base {
+  .light {
+    --color-background: linear-gradient(180deg, #ffffff, #e2ecef);
+    --color-primaryButton: #1a53ff;
+  }
+
+  .dark {
+    --color-background: linear-gradient(180deg, #191a19, #141515);
+    --color-primaryButton: #99a0b2;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

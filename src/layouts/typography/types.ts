@@ -1,4 +1,3 @@
-import { Color } from '@quiz-stream/themes/color';
 import { ReactNode } from 'react';
 
 export enum FontSize {
@@ -13,6 +12,5 @@ export enum FontSize {
 export type TextProps = {
   children: ReactNode;
   className?: string;
-  color?: Color; //TODO remove prop it if you define color in tailwind.config.ts
   fontSize?: FontSize;
 };
