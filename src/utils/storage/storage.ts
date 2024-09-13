@@ -1,5 +1,5 @@
 import { StorageKey } from './enums';
-//TODO create tests for all of this
+
 export const addLocalItem = (key: StorageKey, value: string) => {
   return localStorage.setItem(key, value);
 };

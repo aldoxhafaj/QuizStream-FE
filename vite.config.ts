@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
@@ -43,5 +44,15 @@ export default defineConfig({
         drop_console: true, // Remove console.* calls in production build
       },
     },
+  },
+  test: {
+    reporters: ['verbose'], //choose report style
+    //configure vitest coverage
+    coverage: {
+      reporter: ['json'],
+      enabled: true,
+    },
+    setupFiles: ['./vitest-setUp.ts'], //global mocking
+    globals: true, //no need to import anything from vitest in test files
   },
 });
