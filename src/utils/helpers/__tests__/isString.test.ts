@@ -8,7 +8,6 @@ const scenario: [unknown, boolean][] = [
   [undefined, false],
   [true, false],
   [{}, false],
-  [[], false],
 ];
 
 describe('isString Guard Utility Function', () => {

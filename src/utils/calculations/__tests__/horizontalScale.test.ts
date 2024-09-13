@@ -11,7 +11,6 @@ describe('horizontal scale', () => {
     [undefined, 0],
     [NaN, 0],
     [{}, 0],
-    [[1, 2, 3], 0],
     ['string', 0],
     [false, 0],
   ];

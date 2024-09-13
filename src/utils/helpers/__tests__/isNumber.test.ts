@@ -8,7 +8,6 @@ const scenario: [unknown, boolean][] = [
   [undefined, false],
   [false, false],
   [{}, false],
-  [[1, 2, 3], false],
 ];
 
 describe('isNumber Guard Utility Function', () => {

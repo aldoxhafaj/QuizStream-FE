@@ -7,5 +7,6 @@ export const horizontalScale = (size: number) => {
     return 0;
   }
 
-  return WIDTH_RATIO * size;
+  const scaledSize = WIDTH_RATIO * size;
+  return Number(scaledSize.toFixed(2));
 };

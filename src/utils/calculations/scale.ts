@@ -7,5 +7,6 @@ export const scale = (size: number) => {
     return 0;
   }
 
-  return (SHORT_DIMENSION / GUIDELINE_BASE_WIDTH) * size;
+  const scaledSize = (SHORT_DIMENSION / GUIDELINE_BASE_WIDTH) * size;
+  return Number(scaledSize.toFixed(2));
 };

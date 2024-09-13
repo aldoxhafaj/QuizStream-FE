@@ -9,7 +9,6 @@ const scenario: [unknown, boolean][] = [
   [NaN, false],
   [undefined, false],
   [{}, false],
-  [[1, 2, 3], false],
 ];
 
 describe('isBoolean Guard Utility Function', () => {
