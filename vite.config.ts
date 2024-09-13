@@ -46,7 +46,7 @@ export default defineConfig({
     },
   },
   test: {
-    reporters: ['default'], //choose report style
+    reporters: ['verbose'], //choose report style
     //configure vitest coverage
     coverage: {
       reporter: ['json'],
