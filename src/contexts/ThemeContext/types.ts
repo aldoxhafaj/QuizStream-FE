@@ -9,6 +9,6 @@ export type ThemeProviderProps = {
 };
 
 export type ThemeContextProps = {
-  isDarkColorTheme?: boolean;
+  isDarkColorTheme: boolean;
   toggleTheme: () => void;
 };
