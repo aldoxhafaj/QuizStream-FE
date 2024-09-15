@@ -11,11 +11,20 @@ export default {
   theme: {
     extend: {
       colors: {
+        screen: 'var(--color-background)',
+        container: 'var(--color-container)',
         primaryButton: 'var(--color-primaryButton)',
+        grass: 'var(--color-grass)',
+        notify: 'var(--color-notify)',
+        'sharp-container': 'var(--color-sharp-container)',
+        active: 'var(--color-active)',
+        pending: 'var(--color-pending)',
+        base: 'var(--color-text)',
+        light: 'var(--color-light-text)',
+        danger: 'var(--color-danger)',
       },
       backgroundImage: {
-        //use it like bg-screen in tailwind className
-        screen: 'var(--color-background)',
+        //if any linear-gradient color use it here
       },
     },
   },
