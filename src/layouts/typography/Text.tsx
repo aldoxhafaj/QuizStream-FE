@@ -12,12 +12,9 @@ const TextFontStyle = {
 export const Text = ({
   children,
   className,
-  color,
   fontSize = FontSize.H3,
 }: TextProps) => {
   return (
-    <p className={`${className} ${TextFontStyle[fontSize]}`} style={{ color }}>
-      {children}
-    </p>
+    <p className={`${className} ${TextFontStyle[fontSize]}`}>{children}</p>
   );
 };
