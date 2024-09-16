@@ -12,10 +12,12 @@ const meta: Meta<typeof Input> = {
     },
   },
   argTypes: {
-    //TODO check this undefined here.There must be another way!
     label: {
-      options: ['Email', 'Password', undefined],
+      options: ['Email', 'Password', 'none'],
       control: { type: 'inline-radio' },
+      mapping: {
+        none: undefined,
+      },
     },
     size: {
       options: ['sm', 'md', 'lg'],
@@ -26,7 +28,7 @@ const meta: Meta<typeof Input> = {
       control: { type: 'select' },
     },
     variant: {
-      options: ['bordered', 'faded', 'flat', 'underline'],
+      options: ['bordered', 'faded', 'flat', 'underlined'],
       control: { type: 'select' },
     },
     color: {
@@ -46,19 +48,28 @@ const meta: Meta<typeof Input> = {
     },
     labelPlacement: {
       options: ['inside', 'outside-left', 'outside'],
-      control: { type: 'inline-check' },
+      control: { type: 'inline-radio' },
     },
     placeholder: {
-      options: ['your-email@example.com'],
-      control: { type: 'boolean' },
+      options: ['your-email@example.com', 'none'],
+      control: { type: 'select' },
+      mapping: {
+        none: undefined,
+      },
     },
-    defaultValue: {
-      options: ['aldo@gmail.com'],
-      control: { type: 'boolean' },
+    value: {
+      options: ['aldo@gmail.com', 'none'],
+      control: { type: 'select' },
+      mapping: {
+        none: undefined,
+      },
     },
     errorMessage: {
-      options: ['This input is required!'],
-      control: { type: 'boolean' },
+      options: ['This input is required!', 'none'],
+      control: { type: 'select' },
+      mapping: {
+        none: undefined,
+      },
     },
   },
 };
