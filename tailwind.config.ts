@@ -6,7 +6,7 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     //if you install another component from next ui you declare it like (button|snippet|code|input).js
-    './node_modules/@nextui-org/theme/dist/components/(button|spinner).js',
+    './node_modules/@nextui-org/theme/dist/components/(button|spinner|input).js',
   ],
   theme: {
     screens: {
@@ -43,6 +43,16 @@ export default {
         headline_4: '18px',
         headline_5: '16px',
         headline_6: '14px',
+        /* responsive behaviour */
+        scale_1: '40px',
+        scale_2: '36px',
+        scale_3: '32px',
+        scale_4: '28px',
+        scale_5: '24px',
+        scale_6: '20px',
+        scale_7: '16px',
+        scale_8: '14px',
+        scale_9: '12px',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

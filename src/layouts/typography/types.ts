@@ -9,8 +9,15 @@ export enum FontSize {
   H6 = 'H6',
 }
 
+export enum TextColor {
+  BASE = 'text-base',
+  LIGHT = 'text-light',
+}
+
 export type TextProps = {
   children: ReactNode;
   className?: string;
   fontSize?: FontSize;
+  color?: TextColor;
+  onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 };
