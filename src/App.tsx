@@ -7,7 +7,7 @@ export const App = () => {
 
   return (
     <Container className="size-full bg-screen">
-      <Text className="text-lg text-red-500">
+      <Text>
         {formatMessage({
           id: 'quizStreamApp.title',
           defaultMessage: 'Hello Vite!',
