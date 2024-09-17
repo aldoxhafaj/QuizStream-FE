@@ -19,5 +19,6 @@ export type TextProps = {
   className?: string;
   fontSize?: FontSize;
   color?: TextColor;
+  underline?: boolean;
   onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 };

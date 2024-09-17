@@ -23,6 +23,7 @@ export const Row = ({
   marginVertical,
   justifyContent = 'center',
   alignItems = 'center',
+  gap,
 }: RowProps) => {
   return (
     <div
@@ -42,6 +43,7 @@ export const Row = ({
         flexDirection: FLEX_DIRECTION,
         justifyContent,
         alignItems,
+        gap,
       }}
     >
       {children}

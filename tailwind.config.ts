@@ -28,6 +28,7 @@ export default {
         active: 'var(--color-active)',
         pending: 'var(--color-pending)',
         danger: 'var(--color-danger)',
+        purple: 'var(--color-purple)',
       },
       backgroundImage: {
         //if any linear-gradient color use it here
