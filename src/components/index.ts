@@ -3,3 +3,4 @@ export { Input } from './Input';
 export { Lottie } from './Lottie';
 export { Checkbox } from './Checkbox';
 export { DarkModeToggler } from './DarkModeToggler';
+export { FormWrapper, InputField } from './Formik';
