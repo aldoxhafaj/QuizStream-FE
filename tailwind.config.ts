@@ -6,7 +6,7 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     //if you install another component from next ui you declare it like (button|snippet|code|input).js
-    './node_modules/@nextui-org/theme/dist/components/(button|spinner|input).js',
+    './node_modules/@nextui-org/theme/dist/components/(button|spinner|input|checkbox).js',
   ],
   theme: {
     screens: {

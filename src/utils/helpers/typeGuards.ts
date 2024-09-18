@@ -1,15 +1,15 @@
-export const isNumber = <T>(value: T) => {
+export const isNumber = (value: unknown): value is number => {
   return typeof value === 'number' && !isNaN(value);
 };
 
-export const isString = <T>(value: T) => {
+export const isString = (value: unknown): value is string => {
   return typeof value === 'string';
 };
 
-export const isBoolean = <T>(value: T) => {
+export const isBoolean = (value: unknown): value is boolean => {
   return typeof value === 'boolean';
 };
 
-export const isArray = <T>(value: T) => {
+export const isArray = (value: unknown) => {
   return Array.isArray(value);
 };

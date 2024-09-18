@@ -14,4 +14,5 @@ export type RowProps = LayoutInsetProps & {
   justifyContent?: JustifyContent;
   alignItems?: AlignItem;
   gap?: HorizontalSpacing;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };

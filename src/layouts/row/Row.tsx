@@ -24,6 +24,7 @@ export const Row = ({
   justifyContent = 'center',
   alignItems = 'center',
   gap,
+  onClick,
 }: RowProps) => {
   return (
     <div
@@ -45,6 +46,7 @@ export const Row = ({
         alignItems,
         gap,
       }}
+      onClick={onClick}
     >
       {children}
     </div>
