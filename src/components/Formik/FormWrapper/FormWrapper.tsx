@@ -1,30 +1,27 @@
+import { VerticalSpacing } from '@quiz-stream/themes/spacing';
 import { FormikProvider } from 'formik';
 
 import { FormLayout } from './FormLayout';
-import { FormWrapperType } from './types';
+import { FormWrapperProps } from './types';
 
 export const FormWrapper = <T,>({
   children,
   formik,
-  shouldFlex,
-  isDisabled,
-  scrollEnabled = true,
-  isCentered = false,
-  inputsGap,
+  submitTitle,
+  inputsGap = VerticalSpacing.M,
   footer,
-  skipDirtyCheck,
+  isDisabled = false,
+  skipDirtyCheck = false,
   isLoading = formik.isSubmitting,
-}: FormWrapperType<T>) => {
+}: FormWrapperProps<T>) => {
   return (
     <FormikProvider value={formik}>
       <FormLayout
-        isDisabled={isDisabled}
-        footer={footer}
-        isLoading={isLoading}
-        shouldFlex={shouldFlex}
+        submitTitle={submitTitle}
         inputsGap={inputsGap}
-        scrollEnabled={scrollEnabled}
-        isCentered={isCentered}
+        footer={footer}
+        isDisabled={isDisabled}
+        isLoading={isLoading}
         skipDirtyCheck={skipDirtyCheck}
       >
         {children}

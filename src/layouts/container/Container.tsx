@@ -19,6 +19,7 @@ export const Container = ({
   marginLeft,
   marginHorizontal,
   marginVertical,
+  gap,
   onClick,
 }: ContainerProps) => {
   return (
@@ -36,6 +37,7 @@ export const Container = ({
         marginBottom: marginBottom || marginVertical || margin,
         marginRight: marginRight || marginHorizontal || margin,
         marginLeft: marginLeft || marginHorizontal || margin,
+        gap,
       }}
     >
       {children}

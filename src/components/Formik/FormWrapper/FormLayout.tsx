@@ -1,20 +1,18 @@
 import { Container } from '@quiz-stream/layouts/container';
 
 import { FormContent } from './FormContent';
-import { FormLayoutType } from './types';
+import { FormLayoutProps } from './types';
 import { useFormWrapper } from './useFormWrapper';
 
 export const FormLayout = ({
   children,
-  isDisabled = false,
   footer,
+  submitTitle,
+  inputsGap,
+  isDisabled,
   isLoading,
   skipDirtyCheck,
-  // shouldFlex,
-  // scrollEnabled = true,
-  // isCentered = false,
-  // inputsGap = VerticalSpacing.M,
-}: FormLayoutType) => {
+}: FormLayoutProps) => {
   const { isSubmitDisabled, onSubmit } = useFormWrapper({
     isDisabled,
     isLoading,
@@ -23,12 +21,13 @@ export const FormLayout = ({
 
   return (
     <Container>
-      <Container flex={1}>{children}</Container>
+      <Container gap={inputsGap}>{children}</Container>
 
       <FormContent
+        submitTitle={submitTitle}
+        footer={footer}
         onSubmit={onSubmit}
         isDisabled={isSubmitDisabled}
-        footer={footer}
         isLoading={isLoading}
       />
     </Container>
