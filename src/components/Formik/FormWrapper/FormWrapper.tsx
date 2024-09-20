@@ -7,22 +7,24 @@ import { FormWrapperProps } from './types';
 export const FormWrapper = <T,>({
   children,
   formik,
-  submitTitle,
-  inputsGap = VerticalSpacing.M,
+  inputsGap = VerticalSpacing.S,
+  buttonProps,
   footer,
   isDisabled = false,
   skipDirtyCheck = false,
   isLoading = formik.isSubmitting,
+  enableFooterBottomPadding = false,
 }: FormWrapperProps<T>) => {
   return (
     <FormikProvider value={formik}>
       <FormLayout
-        submitTitle={submitTitle}
         inputsGap={inputsGap}
         footer={footer}
+        buttonProps={buttonProps}
         isDisabled={isDisabled}
         isLoading={isLoading}
         skipDirtyCheck={skipDirtyCheck}
+        enableFooterBottomPadding={enableFooterBottomPadding}
       >
         {children}
       </FormLayout>

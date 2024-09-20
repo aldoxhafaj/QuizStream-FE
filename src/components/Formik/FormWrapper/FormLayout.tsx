@@ -1,17 +1,18 @@
+import { useFormWrapper } from '@quiz-stream/components/Formik/hooks';
 import { Container } from '@quiz-stream/layouts/container';
 
-import { FormContent } from './FormContent';
+import { FormFooter } from './FormFooter';
 import { FormLayoutProps } from './types';
-import { useFormWrapper } from './useFormWrapper';
 
 export const FormLayout = ({
   children,
   footer,
-  submitTitle,
+  buttonProps,
   inputsGap,
-  isDisabled,
-  isLoading,
-  skipDirtyCheck,
+  isDisabled = false,
+  isLoading = false,
+  skipDirtyCheck = false,
+  enableFooterBottomPadding = false,
 }: FormLayoutProps) => {
   const { isSubmitDisabled, onSubmit } = useFormWrapper({
     isDisabled,
@@ -20,16 +21,23 @@ export const FormLayout = ({
   });
 
   return (
-    <Container>
-      <Container gap={inputsGap}>{children}</Container>
+    <Container className="size-full">
+      <form>
+        <Container className="flex size-full flex-col" gap={inputsGap}>
+          {children}
+        </Container>
+      </form>
 
-      <FormContent
-        submitTitle={submitTitle}
-        footer={footer}
-        onSubmit={onSubmit}
-        isDisabled={isSubmitDisabled}
-        isLoading={isLoading}
-      />
+      {(!!buttonProps || !!footer) && (
+        <FormFooter
+          buttonProps={buttonProps}
+          footer={footer}
+          onSubmit={onSubmit}
+          isDisabled={isSubmitDisabled}
+          isLoading={isLoading}
+          enableFooterBottomPadding={enableFooterBottomPadding}
+        />
+      )}
     </Container>
   );
 };

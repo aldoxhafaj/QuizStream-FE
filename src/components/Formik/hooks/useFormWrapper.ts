@@ -1,12 +1,12 @@
-import { useIsSubmitDisabled } from '@quiz-stream/components/Formik/hooks';
 import { useFormikContext } from 'formik';
 
 import { UseFormWrapperProps } from './types';
+import { useIsSubmitDisabled } from './useIsSubmitDisabled';
 
 export const useFormWrapper = ({
-  isDisabled,
-  isLoading,
-  skipDirtyCheck,
+  isDisabled = false,
+  isLoading = false,
+  skipDirtyCheck = false,
 }: UseFormWrapperProps) => {
   const formik = useFormikContext();
 

@@ -1,23 +1,23 @@
 import { useFormikContext } from 'formik';
 
-export const useIsSubmitDisabled = (config?: {
-  isDisabled?: boolean;
-  isLoading?: boolean;
-  skipDirtyCheck?: boolean;
-}) => {
+import { UseIsSubmitDisabledProps } from './types';
+
+export const useIsSubmitDisabled = (
+  configOptions?: UseIsSubmitDisabledProps,
+) => {
   const formik = useFormikContext();
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!formik) {
     throw new Error('useIsSubmitDisabled must be used within a Formik context');
   }
 
-  const isLoading = config?.isLoading || formik.isSubmitting;
+  const isLoading = configOptions?.isLoading || formik.isSubmitting;
 
   const isFormikValid =
-    formik.isValid && (config?.skipDirtyCheck ? true : formik.dirty);
+    formik.isValid && (configOptions?.skipDirtyCheck ? true : formik.dirty);
 
-  const isSubmitDisabled = !isFormikValid || !!config?.isDisabled || isLoading;
+  const isSubmitDisabled =
+    !isFormikValid || !!configOptions?.isDisabled || isLoading;
 
   return isSubmitDisabled;
 };

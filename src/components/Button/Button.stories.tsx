@@ -64,5 +64,6 @@ export const ButtonComponent: Story = {
     isLoading: false,
     isDisabled: false,
     isIconOnly: false,
+    fullWidth: false,
   },
 };

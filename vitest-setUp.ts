@@ -4,3 +4,9 @@ vi.mock('@quiz-stream/utils/calculations/constants', () => ({
   SHORT_DIMENSION: 1080,
   GUIDELINE_BASE_WIDTH: 1920,
 }));
+
+vi.mock('@quiz-stream/contexts/IntlContext', () => ({
+  useIntl: () => ({
+    formatMessage: vi.fn(({ id }: { id: string }) => id),
+  }),
+}));

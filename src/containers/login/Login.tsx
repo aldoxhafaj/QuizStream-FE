@@ -1,7 +1,6 @@
-import { Button } from '@quiz-stream/components/Button';
 import { Checkbox } from '@quiz-stream/components/Checkbox';
 import { DarkModeToggler } from '@quiz-stream/components/DarkModeToggler';
-import { Input } from '@quiz-stream/components/Input';
+import { FormWrapper, InputField } from '@quiz-stream/components/Formik';
 import { Lottie } from '@quiz-stream/components/Lottie';
 import { useIntl } from '@quiz-stream/contexts/IntlContext';
 import { Container } from '@quiz-stream/layouts/container';
@@ -14,9 +13,13 @@ import {
 } from '@quiz-stream/themes/spacing';
 import { scale } from '@quiz-stream/utils/calculations';
 
+import { useLogin } from './hooks';
+
 const LOTTIE_ANIMATION_SIZE = scale(600);
 export const Login = () => {
   const { formatMessage } = useIntl();
+  const { formik } = useLogin();
+
   return (
     <Row className="size-full bg-screen" padding={HorizontalSpacing.M}>
       <Row className="w-3/4 rounded-x2 bg-container shadow-x3 sm:w-11/12 md:w-11/12">
@@ -40,7 +43,7 @@ export const Login = () => {
             <Row
               justifyContent="flex-start"
               gap={HorizontalSpacing.S}
-              paddingBottom={VerticalSpacing.M_L}
+              paddingBottom={VerticalSpacing.M}
             >
               <Text fontSize={FontSize.H6} color={TextColor.LIGHT}>
                 {formatMessage({
@@ -59,48 +62,56 @@ export const Login = () => {
                 })}
               </Text>
             </Row>
-            {/* TODO create form wrapper with formik to validate input*/}
-            <form>
-              <Container paddingBottom={VerticalSpacing.S_M}>
-                <Input type="text" label="Email" size="sm" radius="sm" />
-              </Container>
 
-              <Container paddingBottom={VerticalSpacing.S_M}>
-                <Input
-                  type="password"
-                  label="Enter your password"
-                  size="sm"
-                  radius="sm"
-                />
-                <Container paddingTop={VerticalSpacing.XS}>
-                  <Checkbox radius="sm">
-                    <Row gap={HorizontalSpacing.S}>
-                      <Text fontSize={FontSize.H6}>
-                        {formatMessage({
-                          id: 'quizStreamApp.login.confirmation',
-                          defaultMessage: 'I agree to the',
-                        })}
-                      </Text>
-                      <Text
-                        className="select-none text-purple"
-                        fontSize={FontSize.H6}
-                        underline
-                      >
-                        {formatMessage({
-                          id: 'quizStreamApp.login.terms',
-                          defaultMessage: 'Terms&Conditions',
-                        })}
-                      </Text>
-                    </Row>
-                  </Checkbox>
-                </Container>
+            <FormWrapper
+              formik={formik}
+              buttonProps={{
+                buttonTitle: formatMessage({
+                  id: 'quizStreamApp.login.button',
+                  defaultMessage: 'Login',
+                }),
+                color: 'secondary',
+                radius: 'sm',
+              }}
+            >
+              <InputField
+                name="email"
+                type="text"
+                label="Email"
+                size="sm"
+                radius="sm"
+              />
+
+              <InputField
+                name="password"
+                type="password"
+                label="Enter your password"
+                size="sm"
+                radius="sm"
+              />
+              <Container paddingTop={VerticalSpacing.XS}>
+                <Checkbox radius="sm">
+                  <Row gap={HorizontalSpacing.S}>
+                    <Text fontSize={FontSize.H6}>
+                      {formatMessage({
+                        id: 'quizStreamApp.login.confirmation',
+                        defaultMessage: 'I agree to the',
+                      })}
+                    </Text>
+                    <Text
+                      className="select-none text-purple"
+                      fontSize={FontSize.H6}
+                      underline
+                    >
+                      {formatMessage({
+                        id: 'quizStreamApp.login.terms',
+                        defaultMessage: 'Terms&Conditions',
+                      })}
+                    </Text>
+                  </Row>
+                </Checkbox>
               </Container>
-            </form>
-            <Container paddingTop={VerticalSpacing.M_L}>
-              <Button color="secondary" radius="sm" fullWidth>
-                Login
-              </Button>
-            </Container>
+            </FormWrapper>
           </Container>
         </Row>
       </Row>

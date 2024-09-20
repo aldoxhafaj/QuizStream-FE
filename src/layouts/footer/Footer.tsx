@@ -1,3 +1,5 @@
+import { VerticalSpacing } from '@quiz-stream/themes/spacing';
+
 import { FooterProps } from './types';
 
 const JUSTIFY_DIRECTION = 'flex-end';
@@ -8,6 +10,7 @@ export const Footer = ({
   alignItems = 'center',
   paddingBottom,
   marginBottom,
+  enableBottomPadding = false,
 }: FooterProps) => {
   return (
     <div
@@ -16,7 +19,7 @@ export const Footer = ({
         alignSelf: ALIGN_SELF,
         justifyContent: JUSTIFY_DIRECTION,
         alignItems,
-        paddingBottom,
+        paddingBottom: enableBottomPadding ? VerticalSpacing.M : paddingBottom,
         marginBottom,
       }}
     >
