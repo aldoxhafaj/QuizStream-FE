@@ -1,8 +1,9 @@
 import { Row } from '@quiz-stream/layouts/row';
 import { Text } from '@quiz-stream/layouts/typography';
-import { FlexTextBlockProps } from './types';
-import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
 import { FontSize, TextColor } from '@quiz-stream/layouts/typography/types';
+import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
+
+import { FlexTextBlockProps } from './types';
 
 export const FlexTextBlock = ({
   primaryText,

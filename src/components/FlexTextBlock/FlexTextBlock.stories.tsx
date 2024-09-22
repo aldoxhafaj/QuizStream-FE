@@ -1,8 +1,8 @@
+import { FontSize, TextColor } from '@quiz-stream/layouts/typography/types';
+import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { FlexTextBlock } from './FlexTextBlock';
-import { FontSize, TextColor } from '@quiz-stream/layouts/typography/types';
-import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
 
 const meta: Meta<typeof FlexTextBlock> = {
   component: FlexTextBlock,

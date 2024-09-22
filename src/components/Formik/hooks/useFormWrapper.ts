@@ -15,8 +15,7 @@ export const useFormWrapper = ({
 
   const isInProgress = isLoading || formik.isSubmitting;
 
-  const isFormikValid =
-    formik.isValid && (skipDirtyCheck ? true : formik.dirty);
+  const isFormikValid = formik.isValid && (skipDirtyCheck || !!formik.dirty);
 
   const isSubmitDisabled = !isFormikValid || isDisabled || isInProgress;
 

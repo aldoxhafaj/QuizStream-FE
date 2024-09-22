@@ -1,6 +1,6 @@
-import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
-import { FontSize, TextColor } from '@quiz-stream/layouts/typography/types';
 import { LayoutInsetProps } from '@quiz-stream/layouts/types';
+import { FontSize, TextColor } from '@quiz-stream/layouts/typography/types';
+import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
 
 export type FlexTextBlockProps = {
   primaryText: string;

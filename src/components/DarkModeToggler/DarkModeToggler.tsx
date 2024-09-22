@@ -1,9 +1,9 @@
 import { useThemeToggler } from '@quiz-stream/contexts/ThemeContext';
 import { IconSVG } from '@quiz-stream/layouts/iconSVG';
+import { SVGColor } from '@quiz-stream/layouts/iconSVG/types';
 import { Row } from '@quiz-stream/layouts/row';
 
 import { DarkModeTogglerProps } from './types';
-import { SVGColor } from '@quiz-stream/layouts/iconSVG/types';
 
 export const DarkModeToggler = ({
   iconColor = SVGColor.WHITE,

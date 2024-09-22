@@ -1,5 +1,6 @@
 import { Checkbox } from '@quiz-stream/components/Checkbox';
 import { DarkModeToggler } from '@quiz-stream/components/DarkModeToggler';
+import { FlexTextBlock } from '@quiz-stream/components/FlexTextBlock';
 import { FormWrapper, InputField } from '@quiz-stream/components/Formik';
 import { Lottie } from '@quiz-stream/components/Lottie';
 import { useIntl } from '@quiz-stream/contexts/IntlContext';
@@ -14,7 +15,6 @@ import {
 import { scale } from '@quiz-stream/utils/calculations';
 
 import { useLogin } from './hooks';
-import { FlexTextBlock } from '@quiz-stream/components/FlexTextBlock';
 
 const LOTTIE_ANIMATION_SIZE = scale(600);
 export const Login = () => {
