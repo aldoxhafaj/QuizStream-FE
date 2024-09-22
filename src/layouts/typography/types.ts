@@ -12,6 +12,7 @@ export enum FontSize {
 export enum TextColor {
   BASE = 'text-base',
   LIGHT = 'text-light',
+  PURPLE = 'text-purple',
 }
 
 export type TextProps = {

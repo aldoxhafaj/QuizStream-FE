@@ -3,8 +3,11 @@ import { IconSVG } from '@quiz-stream/layouts/iconSVG';
 import { Row } from '@quiz-stream/layouts/row';
 
 import { DarkModeTogglerProps } from './types';
+import { SVGColor } from '@quiz-stream/layouts/iconSVG/types';
 
-export const DarkModeToggler = ({ iconColor }: DarkModeTogglerProps) => {
+export const DarkModeToggler = ({
+  iconColor = SVGColor.WHITE,
+}: DarkModeTogglerProps) => {
   const { toggleTheme, isDarkColorTheme } = useThemeToggler();
 
   return (

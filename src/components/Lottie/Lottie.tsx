@@ -3,13 +3,13 @@ import LottieComponent from 'react-lottie-player';
 
 import { LottieComponentProps } from './types';
 
-const FULL_SCREEN = '100%';
+const FULL_SIZE = '100%';
 const PRESERVE_RATIO = 'xMidYMid slice';
 export const Lottie = ({
   animation,
   loop = false,
   play = true,
-  size = FULL_SCREEN,
+  size = FULL_SIZE,
 }: LottieComponentProps) => {
   return (
     <LottieComponent

@@ -1,7 +1,6 @@
 import { useFormikContext } from 'formik';
 
 import { UseFormWrapperProps } from './types';
-import { useIsSubmitDisabled } from './useIsSubmitDisabled';
 
 export const useFormWrapper = ({
   isDisabled = false,
@@ -10,11 +9,16 @@ export const useFormWrapper = ({
 }: UseFormWrapperProps) => {
   const formik = useFormikContext();
 
-  const isSubmitDisabled = useIsSubmitDisabled({
-    isDisabled,
-    isLoading,
-    skipDirtyCheck,
-  });
+  if (!formik) {
+    throw new Error('useFormWrapper must be used within a Formik context');
+  }
+
+  const isInProgress = isLoading || formik.isSubmitting;
+
+  const isFormikValid =
+    formik.isValid && (skipDirtyCheck ? true : formik.dirty);
+
+  const isSubmitDisabled = !isFormikValid || isDisabled || isInProgress;
 
   return {
     isSubmitDisabled,

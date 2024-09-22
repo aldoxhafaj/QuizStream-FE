@@ -14,6 +14,7 @@ import {
 import { scale } from '@quiz-stream/utils/calculations';
 
 import { useLogin } from './hooks';
+import { FlexTextBlock } from '@quiz-stream/components/FlexTextBlock';
 
 const LOTTIE_ANIMATION_SIZE = scale(600);
 export const Login = () => {
@@ -40,28 +41,20 @@ export const Login = () => {
               </Text>
               <DarkModeToggler />
             </Row>
-            <Row
-              justifyContent="flex-start"
-              gap={HorizontalSpacing.S}
+
+            <FlexTextBlock
               paddingBottom={VerticalSpacing.M}
-            >
-              <Text fontSize={FontSize.H6} color={TextColor.LIGHT}>
-                {formatMessage({
-                  id: 'quizStreamApp.login.subtitle',
-                  defaultMessage: `Don't have an account?`,
-                })}
-              </Text>
-              <Text
-                className="cursor-pointer select-none text-purple hover:scale-105 active:opacity-85"
-                fontSize={FontSize.H6}
-                underline
-              >
-                {formatMessage({
-                  id: 'quizStreamApp.login.signup',
-                  defaultMessage: 'Sign up',
-                })}
-              </Text>
-            </Row>
+              primaryText={formatMessage({
+                id: 'quizStreamApp.login.subtitle',
+                defaultMessage: `Don't have an account?`,
+              })}
+              secondaryText={formatMessage({
+                id: 'quizStreamApp.login.signup',
+                defaultMessage: 'Sign up',
+              })}
+              primaryTextColor={TextColor.LIGHT}
+              isSecondaryTextUnderlined
+            />
 
             <FormWrapper
               formik={formik}
@@ -91,24 +84,17 @@ export const Login = () => {
               />
               <Container paddingTop={VerticalSpacing.XS}>
                 <Checkbox radius="sm">
-                  <Row gap={HorizontalSpacing.S}>
-                    <Text fontSize={FontSize.H6}>
-                      {formatMessage({
-                        id: 'quizStreamApp.login.confirmation',
-                        defaultMessage: 'I agree to the',
-                      })}
-                    </Text>
-                    <Text
-                      className="select-none text-purple"
-                      fontSize={FontSize.H6}
-                      underline
-                    >
-                      {formatMessage({
-                        id: 'quizStreamApp.login.terms',
-                        defaultMessage: 'Terms&Conditions',
-                      })}
-                    </Text>
-                  </Row>
+                  <FlexTextBlock
+                    primaryText={formatMessage({
+                      id: 'quizStreamApp.login.confirmation',
+                      defaultMessage: 'I agree to the',
+                    })}
+                    secondaryText={formatMessage({
+                      id: 'quizStreamApp.login.terms',
+                      defaultMessage: 'Terms&Conditions',
+                    })}
+                    isSecondaryTextUnderlined
+                  />
                 </Checkbox>
               </Container>
             </FormWrapper>
