@@ -4,13 +4,6 @@ import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   argTypes: {
     color: {
       options: [
@@ -64,6 +57,5 @@ export const ButtonComponent: Story = {
     isLoading: false,
     isDisabled: false,
     isIconOnly: false,
-    fullWidth: false,
   },
 };

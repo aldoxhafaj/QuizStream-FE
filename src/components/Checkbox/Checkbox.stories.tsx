@@ -1,4 +1,3 @@
-import { Container } from '@quiz-stream/layouts/container';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox } from './Checkbox';
@@ -6,13 +5,6 @@ import { Checkbox } from './Checkbox';
 const CHECKBOX_VALUE = 'Approve';
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   argTypes: {
     color: {
       options: [
@@ -40,11 +32,7 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 export const CheckboxComponent: Story = {
-  render: (args) => (
-    <Container className="dark">
-      <Checkbox {...args}>Agree</Checkbox>
-    </Container>
-  ),
+  render: (args) => <Checkbox {...args}>Agree</Checkbox>,
   args: {
     value: CHECKBOX_VALUE,
     defaultSelected: true,

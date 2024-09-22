@@ -6,13 +6,6 @@ import { Lottie } from './Lottie';
 const LOTTIE_ANIMATION_SIZE = scale(600);
 const meta: Meta<typeof Lottie> = {
   component: Lottie,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   argTypes: {
     size: {
       options: [LOTTIE_ANIMATION_SIZE, 'full_screen'],

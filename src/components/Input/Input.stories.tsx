@@ -4,13 +4,6 @@ import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   argTypes: {
     label: {
       options: ['Email', 'Password', 'none'],
