@@ -1,8 +1,11 @@
 import { useLoginSchema } from '@quiz-stream/components/Formik';
-import { LoginFormValues } from '@quiz-stream/containers/login/types';
+import {
+  LoginFormValues,
+  UseLoginFormProps,
+} from '@quiz-stream/components/Forms/LoginForm/types';
 import { useFormik } from 'formik';
 
-export const useLogin = () => {
+export const useLoginForm = ({ onSubmit }: UseLoginFormProps) => {
   const loginSchema = useLoginSchema();
 
   const formik = useFormik<LoginFormValues>({
@@ -12,9 +15,7 @@ export const useLogin = () => {
     },
     validationSchema: loginSchema,
     validateOnMount: true,
-    onSubmit: () => {
-      //TODO handle login
-    },
+    onSubmit,
   });
 
   return { formik };

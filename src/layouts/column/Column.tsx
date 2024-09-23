@@ -1,6 +1,8 @@
-import { ContainerProps } from './types';
+import { ColumnProps } from './types';
 
-export const Container = ({
+const DISPLAY_TYPE = 'flex';
+const FLEX_DIRECTION = 'column';
+export const Column = ({
   children,
   className,
   flex,
@@ -19,12 +21,14 @@ export const Container = ({
   marginLeft,
   marginHorizontal,
   marginVertical,
+  justifyContent = 'flex-start',
+  alignItems = 'flex-start',
+  gap,
   onClick,
-}: ContainerProps) => {
+}: ColumnProps) => {
   return (
     <div
       className={className}
-      onClick={onClick}
       style={{
         flex,
         flexGrow,
@@ -36,7 +40,13 @@ export const Container = ({
         marginBottom: marginBottom || marginVertical || margin,
         marginRight: marginRight || marginHorizontal || margin,
         marginLeft: marginLeft || marginHorizontal || margin,
+        display: DISPLAY_TYPE,
+        flexDirection: FLEX_DIRECTION,
+        justifyContent,
+        alignItems,
+        gap,
       }}
+      onClick={onClick}
     >
       {children}
     </div>

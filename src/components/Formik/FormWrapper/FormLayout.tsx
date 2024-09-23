@@ -1,4 +1,5 @@
 import { useFormWrapper } from '@quiz-stream/components/Formik/hooks';
+import { Column } from '@quiz-stream/layouts/column';
 import { Container } from '@quiz-stream/layouts/container';
 
 import { FormFooter } from './FormFooter';
@@ -23,9 +24,9 @@ export const FormLayout = ({
   return (
     <Container className="size-full">
       <form>
-        <Container className="flex size-full flex-col" gap={inputsGap}>
+        <Column className="size-full" gap={inputsGap}>
           {children}
-        </Container>
+        </Column>
       </form>
 
       {(!!buttonProps || !!footer) && (

@@ -1,4 +1,4 @@
-import { Login } from '@quiz-stream/containers/login';
+import { Login } from '@quiz-stream/containers/Login';
 
 export const App = () => {
   return <Login />;

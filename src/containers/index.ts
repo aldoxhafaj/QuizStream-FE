@@ -1,3 +1,3 @@
 export * from './admin';
 export * from './client';
-export { Login } from './login';
+export { Login } from './Login';

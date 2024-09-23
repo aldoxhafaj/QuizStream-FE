@@ -5,3 +5,4 @@ export { Footer } from './footer';
 export { BackgroundImageWrapper } from './backgroundImageWrapper';
 export { Image } from './Image';
 export { IconSVG } from './iconSVG';
+export { Column } from './column';
