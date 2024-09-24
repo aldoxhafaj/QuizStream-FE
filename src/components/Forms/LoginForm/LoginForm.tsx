@@ -1,6 +1,9 @@
-import { Checkbox } from '@quiz-stream/components/Checkbox';
 import { FlexTextBlock } from '@quiz-stream/components/FlexTextBlock';
-import { FormWrapper, InputField } from '@quiz-stream/components/Formik';
+import {
+  CheckboxField,
+  FormWrapper,
+  InputField,
+} from '@quiz-stream/components/Formik';
 import { useIntl } from '@quiz-stream/contexts/IntlContext';
 import { Container } from '@quiz-stream/layouts/container';
 import { VerticalSpacing } from '@quiz-stream/themes/spacing';
@@ -46,7 +49,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
         radius="sm"
       />
       <Container paddingTop={VerticalSpacing.XS}>
-        <Checkbox radius="sm">
+        <CheckboxField name="checkbox" radius="sm">
           <FlexTextBlock
             primaryText={formatMessage({
               id: 'quizStreamApp.loginForm.confirmation',
@@ -58,7 +61,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
             })}
             isSecondaryTextUnderlined
           />
-        </Checkbox>
+        </CheckboxField>
       </Container>
     </FormWrapper>
   );

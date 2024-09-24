@@ -48,6 +48,20 @@ export const useLoginSchema = () => {
             'Password must contain at least one uppercase letter!',
         }),
       ),
+    checkbox: Yup.boolean()
+      .oneOf(
+        [true],
+        formatMessage({
+          id: 'schema.agreeOnTerms.checkbox',
+          defaultMessage: 'You must accept the terms and conditions!',
+        }),
+      )
+      .required(
+        formatMessage({
+          id: 'schema.agreeOnTerms.checkbox',
+          defaultMessage: 'You must accept the terms and conditions!',
+        }),
+      ),
   };
 
   return Yup.object().shape(loginSchema);

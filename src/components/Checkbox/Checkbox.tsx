@@ -18,7 +18,7 @@ export const Checkbox = ({
   isInvalid = false,
   isDisabled = false,
   isRequired = false,
-  onChange,
+  onValueChange,
 }: CheckboxProps) => {
   const [isSelected, setIsSelected] = useState(defaultSelected);
 
@@ -38,7 +38,7 @@ export const Checkbox = ({
       isDisabled={isDisabled}
       isRequired={isRequired}
       isSelected={isSelected}
-      onChange={onChange} //checked state (event.target.checked)
+      onChange={(e) => onValueChange?.(e.target.value, e.target.checked)}
       onValueChange={(isSelected) => setIsSelected(isSelected)}
     >
       {children}

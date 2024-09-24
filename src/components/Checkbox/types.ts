@@ -1,6 +1,8 @@
 import { CheckboxProps as CheckboxComponentProps } from '@nextui-org/checkbox';
 
-export type CheckboxProps = Pick<
+export type CheckboxProps = {
+  onValueChange?: (value: string, isSelected?: boolean) => void;
+} & Pick<
   CheckboxComponentProps,
   | 'children'
   | 'icon'
@@ -16,5 +18,4 @@ export type CheckboxProps = Pick<
   | 'isDisabled'
   | 'isIndeterminate'
   | 'isInvalid'
-  | 'onChange'
 >;
