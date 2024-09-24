@@ -1,7 +1,7 @@
+import { Carousel } from '@quiz-stream/components/Carousel';
 import { DarkModeToggler } from '@quiz-stream/components/DarkModeToggler';
 import { FlexTextBlock } from '@quiz-stream/components/FlexTextBlock';
 import { LoginForm } from '@quiz-stream/components/Forms';
-import { Lottie } from '@quiz-stream/components/Lottie';
 import { useIntl } from '@quiz-stream/contexts/IntlContext';
 import { Container } from '@quiz-stream/layouts/container';
 import { Row } from '@quiz-stream/layouts/row';
@@ -11,20 +11,18 @@ import {
   HorizontalSpacing,
   VerticalSpacing,
 } from '@quiz-stream/themes/spacing';
-import { scale } from '@quiz-stream/utils/calculations';
 
 import { useLogin } from './hooks';
 
-const LOTTIE_ANIMATION_SIZE = scale(550);
 export const Login = () => {
   const { formatMessage } = useIntl();
-  const { onLoginSubmit } = useLogin();
+  const { slides, onLoginSubmit } = useLogin();
 
   return (
     <Row className="size-full bg-screen" padding={HorizontalSpacing.M}>
       <Row className="w-3/4 rounded-x2 bg-container shadow-x3 sm:w-11/12 md:w-11/12">
-        <Row flexGrow={1} padding={HorizontalSpacing.M}>
-          <Lottie animation="questionMark" size={LOTTIE_ANIMATION_SIZE} />
+        <Row className="w-1/2" padding={HorizontalSpacing.XL}>
+          <Carousel slides={slides} showIndicators infiniteLoop autoplay />
         </Row>
 
         <Container flexGrow={1} padding={HorizontalSpacing.XXXXXL}>
