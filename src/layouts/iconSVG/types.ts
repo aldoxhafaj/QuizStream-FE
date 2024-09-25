@@ -14,4 +14,5 @@ export enum SVGColor {
   DANGER = 'text-danger',
   PENDING = 'text-pending',
   GRASS = 'text-grass',
+  BASE = 'text-base',
 }

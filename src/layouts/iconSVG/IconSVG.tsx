@@ -6,7 +6,7 @@ export const IconSVG = ({
   name,
   width,
   height,
-  color = SVGColor.WHITE,
+  color = SVGColor.BASE,
 }: IconSVGProps) => {
   const Icon = SVGIcons[name];
 

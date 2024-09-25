@@ -24,7 +24,7 @@ export const CarouselControl = ({
 
   return (
     <Button
-      className={`absolute ${isLeftControl ? 'left-0' : 'right-0'} top-1/2 z-10 -translate-y-1/2 bg-gray-800 p-2`}
+      className={`absolute ${isLeftControl ? 'left-0' : 'right-0'} top-1/2 z-10 -translate-y-1/2 bg-transparent p-2 hover:bg-gray-800`}
       radius="full"
       onPress={onPress}
       isIconOnly

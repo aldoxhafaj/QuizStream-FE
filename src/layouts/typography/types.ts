@@ -21,5 +21,6 @@ export type TextProps = {
   fontSize?: FontSize;
   color?: TextColor;
   underline?: boolean;
+  bold?: boolean;
   onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 };

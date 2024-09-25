@@ -3,36 +3,32 @@ import { Row } from '@quiz-stream/layouts/row';
 
 import { CarouselControl } from './CarouselControl';
 import { useCarousel } from './hooks';
+import { SlideIndicators } from './SlideIndicators';
 import { CarouselProps } from './types';
 
-export const Carousel = ({
+const SLIDE_AUTOPLAY_DURATION = 5000;
+export const Carousel = <T,>({
   slides,
-  duration = 5000,
-  maxPageIndicators,
-  customIndicators,
+  renderItem,
+  customIndicator,
   customLeftControl,
   customRightControl,
+  duration = SLIDE_AUTOPLAY_DURATION,
   autoplay = false,
   infiniteLoop = false,
   showIndicators = true,
   disableControls = false,
-  onChange,
   onSlideClick,
-}: CarouselProps) => {
-  const {
-    slidePage,
-    renderSlide,
-    onNextSlide,
-    onPreviousSlide,
-    handleSlideClick,
-  } = useCarousel({
-    slides,
-    duration,
-    infiniteLoop,
-    autoplay,
-    onChange,
-    onSlideClick,
-  });
+  onSlideChange,
+}: CarouselProps<T>) => {
+  const { slidePage, onNextSlide, onPreviousSlide, onIndicatorClick } =
+    useCarousel({
+      slides,
+      duration,
+      infiniteLoop,
+      autoplay,
+      onSlideChange,
+    });
 
   return (
     <Container className="relative size-full overflow-hidden">
@@ -40,13 +36,13 @@ export const Carousel = ({
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${slidePage * 100}%)` }}
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <Row
-            key={slide.id}
+            key={index}
             className="flex w-full shrink-0"
-            onClick={() => handleSlideClick(slide)}
+            onClick={() => onSlideClick?.(slide)}
           >
-            {renderSlide(slide)}
+            {renderItem(slide, index, slidePage)}
           </Row>
         ))}
       </div>
@@ -67,17 +63,13 @@ export const Carousel = ({
       )}
 
       {showIndicators && (
-        <Container className="absolute bottom-0 left-1/2 flex -translate-x-1/2 space-x-2">
-          {slides.slice(0, maxPageIndicators).map((_, index) => (
-            <div
-              key={index}
-              className={`h-1 min-w-10 cursor-pointer select-none ${index === slidePage ? 'scale-x-110 bg-white' : 'bg-gray-400 opacity-65'} rounded-sm transition-all duration-300`}
-            />
-          ))}
-        </Container>
+        <SlideIndicators
+          slidePage={slidePage}
+          slidesCount={slides.length}
+          customIndicator={customIndicator}
+          onIndicatorClick={onIndicatorClick}
+        />
       )}
-
-      {customIndicators}
     </Container>
   );
 };

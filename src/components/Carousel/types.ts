@@ -1,30 +1,19 @@
-import { Animation } from '@quiz-stream/themes/animations';
-import { ImageName } from '@quiz-stream/themes/imageSize';
 import { ReactNode } from 'react';
 
-export type Slide = {
-  id: number;
-  title?: string;
-  subtitle?: string;
-  animation?: Animation;
-  image?: ImageName;
-};
-
-//TODO render item function so i can render whatever i want
-export type CarouselProps = {
-  slides: Slide[];
+export type CarouselProps<T> = {
+  slides: T[];
+  renderItem: (item: T, index: number, slidePage: number) => ReactNode;
   customRightControl?: ReactNode;
   customLeftControl?: ReactNode;
-  customIndicators?: ReactNode;
+  customIndicator?: ReactNode;
   duration?: number;
-  maxPageIndicators?: number;
   autoplay?: boolean;
   infiniteLoop?: boolean;
   swipeable?: boolean; //TODO try to implement this
   showIndicators?: boolean;
   disableControls?: boolean;
-  onChange?: (item: Slide) => void;
-  onSlideClick?: (item: Slide) => void;
+  onSlideChange?: (item: T) => void;
+  onSlideClick?: (item: T) => void;
 };
 
 export type CarouselControlProps = {
@@ -33,12 +22,18 @@ export type CarouselControlProps = {
   onPress?: () => void;
 };
 
-export type UseCarouselProps = Pick<
-  CarouselProps,
-  | 'slides'
-  | 'infiniteLoop'
-  | 'duration'
-  | 'autoplay'
-  | 'onSlideClick'
-  | 'onChange'
+export type UseCarouselProps<T> = Pick<
+  CarouselProps<T>,
+  'slides' | 'infiniteLoop' | 'duration' | 'autoplay' | 'onSlideChange'
 >;
+
+export type SlideIndicatorProps = {
+  slidePage: number;
+  slidesCount: number;
+  customIndicator?: ReactNode;
+  onIndicatorClick: (index: number) => void;
+};
+
+export type IndicatorProps = {
+  isActive: boolean;
+};

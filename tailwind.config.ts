@@ -20,6 +20,7 @@ export default {
     extend: {
       colors: {
         screen: 'var(--color-background)',
+        contrast: 'var(--color-background-revert)',
         container: 'var(--color-container)',
         primaryButton: 'var(--color-primaryButton)',
         grass: 'var(--color-grass)',

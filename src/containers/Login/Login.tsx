@@ -12,17 +12,23 @@ import {
   VerticalSpacing,
 } from '@quiz-stream/themes/spacing';
 
-import { useLogin } from './hooks';
+import { useLogin, useLoginCarousel } from './hooks';
 
 export const Login = () => {
   const { formatMessage } = useIntl();
-  const { slides, onLoginSubmit } = useLogin();
+  const { onLoginSubmit } = useLogin();
+  const { slides, renderItem } = useLoginCarousel();
 
   return (
     <Row className="size-full bg-screen" padding={HorizontalSpacing.M}>
       <Row className="w-3/4 rounded-x2 bg-container shadow-x3 sm:w-11/12 md:w-11/12">
         <Row className="w-1/2" padding={HorizontalSpacing.XL}>
-          <Carousel slides={slides} showIndicators infiniteLoop autoplay />
+          <Carousel
+            slides={slides}
+            renderItem={renderItem}
+            infiniteLoop
+            autoplay
+          />
         </Row>
 
         <Container flexGrow={1} padding={HorizontalSpacing.XXXXXL}>
