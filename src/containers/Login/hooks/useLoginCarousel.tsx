@@ -87,7 +87,7 @@ export const useLoginCarousel = () => {
       </Text>
       <Container paddingTop={VerticalSpacing.XS}>
         <Text
-          className="font-poppins"
+          className="text-center font-poppins"
           fontSize={FontSize.H6}
           color={TextColor.LIGHT}
         >

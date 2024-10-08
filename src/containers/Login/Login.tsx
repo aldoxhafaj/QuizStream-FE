@@ -21,8 +21,8 @@ export const Login = () => {
 
   return (
     <Row className="size-full bg-screen" padding={HorizontalSpacing.M}>
-      <Row className="w-3/4 rounded-x2 bg-container shadow-x3 sm:w-11/12 md:w-11/12">
-        <Row className="w-1/2" padding={HorizontalSpacing.XL}>
+      <Row className="w-3/4 overflow-hidden rounded-x2 bg-container shadow-x3 xs:flex-col-reverse xs:pb-4 sm:w-11/12 md:w-11/12">
+        <Row className="w-1/2 xs:w-full" padding={HorizontalSpacing.XL}>
           <Carousel
             slides={slides}
             renderItem={renderItem}
@@ -31,7 +31,10 @@ export const Login = () => {
           />
         </Row>
 
-        <Container flexGrow={1} padding={HorizontalSpacing.XXXXXL}>
+        <Container
+          className="w-1/2 xs:w-full"
+          padding={HorizontalSpacing.XXXXXL}
+        >
           <Row
             justifyContent="space-between"
             paddingBottom={VerticalSpacing.XS}

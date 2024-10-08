@@ -7,6 +7,7 @@
     "start": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "_________________COMMON_________________": "echo 'You run a comment script'",
     "lint": "eslint .",
     "lint:fix": "npx eslint . --fix",
     "typescript:check": "tsc --project tsconfig.app.json --noEmit",
@@ -16,7 +17,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run -- --coverage",
-    "test:dev": "vitest"
+    "test:dev": "vitest",
+    "start:host": "vite -- --host"
   },
   "dependencies": {
     "@nextui-org/button": "^2.0.37",
