@@ -6,7 +6,7 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     //if you install another component from next ui you declare it like (button|snippet|code|input).js
-    './node_modules/@nextui-org/theme/dist/components/(button|spinner|input).js',
+    './node_modules/@nextui-org/theme/dist/components/(button|spinner|input|checkbox).js',
   ],
   theme: {
     screens: {
@@ -20,6 +20,7 @@ export default {
     extend: {
       colors: {
         screen: 'var(--color-background)',
+        contrast: 'var(--color-background-revert)',
         container: 'var(--color-container)',
         primaryButton: 'var(--color-primaryButton)',
         grass: 'var(--color-grass)',
@@ -28,6 +29,7 @@ export default {
         active: 'var(--color-active)',
         pending: 'var(--color-pending)',
         danger: 'var(--color-danger)',
+        purple: 'var(--color-purple)',
       },
       backgroundImage: {
         //if any linear-gradient color use it here
@@ -56,6 +58,8 @@ export default {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       borderRadius: {
         x1: '4px',

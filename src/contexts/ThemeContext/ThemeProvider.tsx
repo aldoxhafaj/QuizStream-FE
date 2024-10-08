@@ -1,4 +1,5 @@
 import { Container } from '@quiz-stream/layouts/container';
+import { isString } from '@quiz-stream/utils/helpers';
 import { StorageKey } from '@quiz-stream/utils/storage/enums';
 import {
   addLocalItem,
@@ -20,7 +21,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   const loadAppColorTheme = () => {
     const isDark = fetchLocalItem(StorageKey.IS_DARK_THEME);
-    if (isDark && JSON.parse(isDark)) {
+
+    if (isDark && isString(isDark)) {
       setIsDarkColorTheme(JSON.parse(isDark));
     }
   };

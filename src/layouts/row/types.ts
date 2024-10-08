@@ -3,6 +3,7 @@ import {
   JustifyContent,
   LayoutInsetProps,
 } from '@quiz-stream/layouts/types';
+import { HorizontalSpacing } from '@quiz-stream/themes/spacing';
 import { ReactNode } from 'react';
 
 export type RowProps = LayoutInsetProps & {
@@ -12,4 +13,6 @@ export type RowProps = LayoutInsetProps & {
   flexGrow?: number;
   justifyContent?: JustifyContent;
   alignItems?: AlignItem;
+  gap?: HorizontalSpacing;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };

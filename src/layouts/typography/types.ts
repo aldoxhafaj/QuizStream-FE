@@ -12,6 +12,7 @@ export enum FontSize {
 export enum TextColor {
   BASE = 'text-base',
   LIGHT = 'text-light',
+  PURPLE = 'text-purple',
 }
 
 export type TextProps = {
@@ -19,5 +20,7 @@ export type TextProps = {
   className?: string;
   fontSize?: FontSize;
   color?: TextColor;
+  underline?: boolean;
+  bold?: boolean;
   onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 };

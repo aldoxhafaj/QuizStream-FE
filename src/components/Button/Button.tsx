@@ -16,7 +16,7 @@ export const Button = ({
   isIconOnly = false,
   isLoading = false,
   isDisabled = false,
-  fullWidth = false,
+  fullWidth = true,
   onPress,
 }: ButtonProps) => {
   return (

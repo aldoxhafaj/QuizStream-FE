@@ -8,4 +8,5 @@ export type FooterProps = {
   alignItems?: AlignItem;
   paddingBottom?: VerticalSpacing;
   marginBottom?: VerticalSpacing;
+  enableBottomPadding?: boolean;
 };

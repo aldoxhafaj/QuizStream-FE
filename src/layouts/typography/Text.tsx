@@ -18,11 +18,13 @@ export const Text = ({
   className,
   fontSize = FontSize.H4,
   color = TextColor.BASE,
+  underline = false,
+  bold = false,
   onClick,
 }: TextProps) => {
   return (
     <p
-      className={`font-inter ${className} ${TextFontStyle[fontSize]} ${color}`}
+      className={`font-inter ${className} ${TextFontStyle[fontSize]} ${color} ${underline && 'underline'} ${bold && 'font-bold'}`}
       onClick={onClick}
     >
       {children}

@@ -1,7 +1,5 @@
 import { RowProps } from './types';
 
-const DISPLAY_TYPE = 'flex';
-const FLEX_DIRECTION = 'row';
 export const Row = ({
   children,
   className,
@@ -23,10 +21,12 @@ export const Row = ({
   marginVertical,
   justifyContent = 'center',
   alignItems = 'center',
+  gap,
+  onClick,
 }: RowProps) => {
   return (
     <div
-      className={className}
+      className={`flex flex-row ${className}`}
       style={{
         flex,
         flexGrow,
@@ -38,11 +38,11 @@ export const Row = ({
         marginBottom: marginBottom || marginVertical || margin,
         marginRight: marginRight || marginHorizontal || margin,
         marginLeft: marginLeft || marginHorizontal || margin,
-        display: DISPLAY_TYPE,
-        flexDirection: FLEX_DIRECTION,
         justifyContent,
         alignItems,
+        gap,
       }}
+      onClick={onClick}
     >
       {children}
     </div>

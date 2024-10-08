@@ -7,6 +7,7 @@
     "start": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "_________________COMMON_________________": "echo 'You run a comment script'",
     "lint": "eslint .",
     "lint:fix": "npx eslint . --fix",
     "typescript:check": "tsc --project tsconfig.app.json --noEmit",
@@ -16,18 +17,23 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run -- --coverage",
-    "test:dev": "vitest"
+    "test:dev": "vitest",
+    "start:host": "vite -- --host"
   },
   "dependencies": {
     "@nextui-org/button": "^2.0.37",
+    "@nextui-org/checkbox": "^2.1.5",
     "@nextui-org/input": "^2.2.5",
     "@nextui-org/spinner": "^2.0.33",
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
+    "formik": "^2.4.6",
     "framer-motion": "^11.5.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^6.6.8"
+    "react-intl": "^6.6.8",
+    "react-lottie-player": "^2.1.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",

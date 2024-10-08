@@ -4,13 +4,6 @@ import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   argTypes: {
     color: {
       options: [
